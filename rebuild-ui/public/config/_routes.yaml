@@ -1,0 +1,92 @@
+# Route settings
+# TanStack File Router style file-based routing
+version: '1.0'
+
+# Global settings
+settings:
+  defaultLayout: default
+  authRequired: true
+  notFoundRedirect: /
+
+# Route definitions
+routes:
+  # Auth routes (code-based)
+  - path: /login
+    type: code
+    component: LoginPage
+    auth: false
+    layout: none
+
+  # Builder routes (code-based)
+  - path: /builder/pages
+    type: code
+    component: PageBuilderPage
+    auth: true
+    layout: default
+
+  - path: /builder/resources
+    type: code
+    component: ResourceManagerPage
+    auth: true
+    layout: default
+
+  # YAML-based dynamic routes
+  - path: /
+    type: yaml
+    file: dashboard/page.yaml
+    auth: true
+    layout: default
+
+  - path: /users
+    type: yaml
+    file: users/list.yaml
+    auth: true
+    layout: default
+
+  - path: /users/create
+    type: yaml
+    file: users/create.yaml
+    auth: true
+    layout: default
+
+  - path: /users/edit/:id
+    type: yaml
+    file: users/edit.yaml
+    auth: true
+    layout: default
+
+  - path: /users/show/:id
+    type: yaml
+    file: users/show.yaml
+    auth: true
+    layout: default
+
+  - path: /products
+    type: yaml
+    file: products/list.yaml
+    auth: true
+    layout: default
+
+  - path: /products/create
+    type: yaml
+    file: products/create.yaml
+    auth: true
+    layout: default
+
+  - path: /products/edit/:id
+    type: yaml
+    file: products/edit.yaml
+    auth: true
+    layout: default
+
+  - path: /orders
+    type: yaml
+    file: orders/list.yaml
+    auth: true
+    layout: default
+
+  - path: /orders/show/:id
+    type: yaml
+    file: orders/show.yaml
+    auth: true
+    layout: default

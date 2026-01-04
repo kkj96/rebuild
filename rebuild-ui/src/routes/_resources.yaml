@@ -1,0 +1,84 @@
+# Resource Definitions
+version: '1.0'
+
+resources:
+  - name: users
+    label: Users
+    endpoint: /users
+    icon: Users
+    fields:
+      - name: id
+        label: ID
+        type: text
+        sortable: true
+      - name: name
+        label: Name
+        type: text
+        required: true
+        searchable: true
+      - name: email
+        label: Email
+        type: email
+        required: true
+        searchable: true
+      - name: role
+        label: Role
+        type: select
+        filterable: true
+        options:
+          - label: Admin
+            value: admin
+          - label: Editor
+            value: editor
+          - label: Viewer
+            value: viewer
+      - name: status
+        label: Status
+        type: select
+        filterable: true
+        options:
+          - label: Active
+            value: active
+          - label: Inactive
+            value: inactive
+      - name: avatar
+        label: Avatar
+        type: image
+      - name: createdAt
+        label: Created At
+        type: datetime
+        sortable: true
+
+  - name: roles
+    label: Roles
+    endpoint: /roles
+    icon: Shield
+    fields:
+      - name: id
+        label: ID
+        type: text
+        sortable: true
+      - name: name
+        label: Role Name
+        type: text
+        required: true
+        searchable: true
+      - name: description
+        label: Description
+        type: textarea
+      - name: permissions
+        label: Permissions
+        type: multiselect
+        options:
+          - label: Create
+            value: create
+          - label: Read
+            value: read
+          - label: Update
+            value: update
+          - label: Delete
+            value: delete
+      - name: createdAt
+        label: Created At
+        type: datetime
+        sortable: true

@@ -1,0 +1,45 @@
+# User List Page
+id: users-list
+name: UserList
+title: User Management
+description: View and manage users
+
+components:
+  - id: header-actions
+    type: container
+    props:
+      direction: horizontal
+      justify: space-between
+      align: center
+    children:
+      - id: page-info
+        type: text
+        props:
+          content: ''
+
+      - id: create-button
+        type: button
+        props:
+          text: New User
+          icon: Plus
+          action: navigate
+          href: /users/create
+
+  - id: users-table
+    type: table
+    props:
+      resource: users
+      pageSize: 10
+      columns:
+        - field: id
+          header: ID
+        - field: name
+          header: Name
+        - field: email
+          header: Email
+        - field: role
+          header: Role
+        - field: status
+          header: Status
+        - field: createdAt
+          header: Created At

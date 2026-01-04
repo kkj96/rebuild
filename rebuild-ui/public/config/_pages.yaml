@@ -1,0 +1,15 @@
+# Page index
+# List of page files to load in local mode
+version: '1.0'
+
+pages:
+  - dashboard/page.yaml
+  - users/list.yaml
+  - users/create.yaml
+  - users/edit.yaml
+  - users/show.yaml
+  - products/list.yaml
+  - products/create.yaml
+  - products/edit.yaml
+  - orders/list.yaml
+  - orders/show.yaml

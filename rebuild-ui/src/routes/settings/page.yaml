@@ -1,0 +1,67 @@
+# Settings Page
+id: settings
+name: Settings
+title: Settings
+description: Application settings
+
+components:
+  - id: settings-container
+    type: container
+    props:
+      direction: vertical
+      gap: 24
+    children:
+      - id: appearance-card
+        type: card
+        props:
+          title: Appearance
+          description: Customize the look and feel
+        children:
+          - id: appearance-info
+            type: text
+            props:
+              content: Theme settings can be changed using the theme toggle in the header.
+
+      - id: notifications-card
+        type: card
+        props:
+          title: Notifications
+          description: Manage your notification preferences
+        children:
+          - id: notifications-form
+            type: form
+            props:
+              mode: edit
+              submitText: Save Preferences
+              fields:
+                - name: emailNotifications
+                  label: Email Notifications
+                  type: checkbox
+                - name: pushNotifications
+                  label: Push Notifications
+                  type: checkbox
+
+      - id: security-card
+        type: card
+        props:
+          title: Security
+          description: Manage your security settings
+        children:
+          - id: security-form
+            type: form
+            props:
+              mode: edit
+              submitText: Update Password
+              fields:
+                - name: currentPassword
+                  label: Current Password
+                  type: password
+                  required: true
+                - name: newPassword
+                  label: New Password
+                  type: password
+                  required: true
+                - name: confirmPassword
+                  label: Confirm Password
+                  type: password
+                  required: true

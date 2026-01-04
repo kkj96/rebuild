@@ -1,0 +1,33 @@
+<svg
+  width="128"
+  height="128"
+  viewBox="0 0 128 128"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Stack layers -->
+  <rect x="20" y="28" width="88" height="20" rx="4" fill="#1a1a1a"/>
+  <rect x="16" y="52" width="96" height="20" rx="4" fill="#1a1a1a" opacity="0.85"/>
+  <rect x="20" y="76" width="88" height="20" rx="4" fill="#1a1a1a" opacity="0.7"/>
+
+  <!-- Wrench -->
+  <path
+    d="M78 34
+       C70 34 64 40 64 48
+       C64 50 64.4 52 65.2 53.6
+       L44 74.8
+       C42.6 76.2 42.6 78.4 44 79.8
+       L48.2 84
+       C49.6 85.4 51.8 85.4 53.2 84
+       L74.4 62.8
+       C76 63.6 78 64 80 64
+       C88 64 94 58 94 50
+       C94 48.6 93.8 47.2 93.4 46
+       L86 54
+       L78 50
+       L82 42
+       L90 38
+       C87.6 35.4 83 34 78 34Z"
+    fill="#1a1a1a"
+  />
+</svg>

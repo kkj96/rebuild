@@ -1,0 +1,26 @@
+id: roles-list
+name: RoleList
+title: Role Management
+description: View and manage roles
+
+components:
+  - id: roles-table
+    type: table
+    props:
+      resource: roles
+      title: Roles
+      pageSize: 10
+      columns:
+        - field: name
+          header: Role Name
+        - field: description
+          header: Description
+        - field: permissions
+          header: Permissions
+        - field: createdAt
+          header: Created At
+      actions:
+        create: true
+        edit: true
+        delete: true
+        show: false

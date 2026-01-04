@@ -1,0 +1,32 @@
+# Profile Page
+id: profile
+name: Profile
+title: Profile
+description: View and edit your profile
+
+components:
+  - id: profile-card
+    type: card
+    props:
+      title: Profile Information
+    children:
+      - id: profile-form
+        type: form
+        props:
+          mode: edit
+          submitText: Save Changes
+          fields:
+            - name: name
+              label: Full Name
+              type: text
+              required: true
+            - name: email
+              label: Email
+              type: email
+              required: true
+            - name: avatar
+              label: Avatar URL
+              type: url
+            - name: bio
+              label: Bio
+              type: textarea

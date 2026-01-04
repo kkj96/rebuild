@@ -1,0 +1,142 @@
+# Resource definitions
+version: '1.0'
+
+resources:
+  - name: users
+    label: User Management
+    endpoint: /users
+    icon: Users
+    fields:
+      - name: id
+        label: ID
+        type: text
+        sortable: true
+      - name: name
+        label: Name
+        type: text
+        required: true
+        searchable: true
+      - name: email
+        label: Email
+        type: email
+        required: true
+        searchable: true
+      - name: role
+        label: Role
+        type: select
+        filterable: true
+        options:
+          - label: Admin
+            value: admin
+          - label: Editor
+            value: editor
+          - label: Viewer
+            value: viewer
+      - name: status
+        label: Status
+        type: select
+        filterable: true
+        options:
+          - label: Active
+            value: active
+          - label: Inactive
+            value: inactive
+      - name: avatar
+        label: Avatar
+        type: image
+      - name: createdAt
+        label: Created At
+        type: datetime
+        sortable: true
+
+  - name: products
+    label: Product Management
+    endpoint: /products
+    icon: Package
+    fields:
+      - name: id
+        label: ID
+        type: text
+        sortable: true
+      - name: name
+        label: Product Name
+        type: text
+        required: true
+        searchable: true
+      - name: description
+        label: Description
+        type: textarea
+      - name: price
+        label: Price
+        type: number
+        required: true
+        sortable: true
+      - name: category
+        label: Category
+        type: select
+        filterable: true
+        options:
+          - label: Electronics
+            value: electronics
+          - label: Clothing
+            value: clothing
+          - label: Food
+            value: food
+      - name: stock
+        label: Stock
+        type: number
+        sortable: true
+      - name: status
+        label: Status
+        type: select
+        filterable: true
+        options:
+          - label: On Sale
+            value: active
+          - label: Out of Stock
+            value: out_of_stock
+          - label: Discontinued
+            value: discontinued
+      - name: createdAt
+        label: Created At
+        type: datetime
+        sortable: true
+
+  - name: orders
+    label: Order Management
+    endpoint: /orders
+    icon: ShoppingCart
+    fields:
+      - name: id
+        label: Order Number
+        type: text
+        sortable: true
+      - name: customer
+        label: Customer Name
+        type: text
+        searchable: true
+      - name: product
+        label: Product Name
+        type: text
+        searchable: true
+      - name: amount
+        label: Amount
+        type: number
+        sortable: true
+      - name: status
+        label: Status
+        type: select
+        filterable: true
+        options:
+          - label: Pending
+            value: pending
+          - label: Processing
+            value: processing
+          - label: Completed
+            value: completed
+          - label: Cancelled
+            value: cancelled
+      - name: createdAt
+        label: Order Date
+        type: datetime
+        sortable: true

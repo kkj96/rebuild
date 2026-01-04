@@ -1,0 +1,26 @@
+# User Detail Page
+id: users-show
+name: UserShow
+title: User Details
+description: View user details
+
+components:
+  - id: user-detail
+    type: card
+    props:
+      title: User Information
+      resource: users
+      mode: show
+      fields:
+        - name: id
+          label: ID
+        - name: name
+          label: Name
+        - name: email
+          label: Email
+        - name: role
+          label: Role
+        - name: status
+          label: Status
+        - name: createdAt
+          label: Created At

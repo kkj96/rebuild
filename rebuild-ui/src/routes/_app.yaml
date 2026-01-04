@@ -1,0 +1,30 @@
+# App Configuration
+version: '1.0'
+
+app:
+  # Basic info
+  name: Rebuild
+  title: Rebuild Admin
+  description: Low-code CRUD application builder
+
+  # Branding
+  logo:
+    src: /logo.svg
+    alt: Rebuild
+    width: 32
+    height: 32
+
+  # Theme
+  theme:
+    primaryColor: '#0066FF'
+    darkMode: true
+
+  # Sidebar
+  sidebar:
+    collapsed: false
+    showLogo: true
+
+  # Footer
+  footer:
+    text: Rebuild Admin
+    showVersion: true
