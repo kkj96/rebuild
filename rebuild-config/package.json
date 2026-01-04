@@ -1,0 +1,17 @@
+{
+  "name": "rebuild-config",
+  "version": "0.0.1",
+  "description": "Configuration files for Rebuild applications",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "validate": "node scripts/validate.js"
+  },
+  "keywords": [
+    "rebuild",
+    "config",
+    "yaml",
+    "low-code"
+  ],
+  "license": "MIT"
+}

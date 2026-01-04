@@ -1,0 +1,58 @@
+{
+  "pages": {
+    "login": {
+      "title": "Sign In",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Sign In",
+      "demo": "Demo credentials"
+    }
+  },
+  "actions": {
+    "create": "Create",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "submit": "Submit",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "import": "Import",
+    "refresh": "Refresh"
+  },
+  "table": {
+    "noData": "No data available",
+    "loading": "Loading...",
+    "rowsPerPage": "Rows per page",
+    "of": "of"
+  },
+  "form": {
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email address",
+    "minLength": "Minimum {{count}} characters required"
+  },
+  "auth": {
+    "logout": "Log out",
+    "profile": "Profile",
+    "settings": "Settings"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "users": "Users",
+    "roles": "Roles",
+    "builder": "Builder",
+    "pageBuilder": "Page Builder",
+    "resources": "Resources",
+    "settings": "Settings",
+    "collapse": "Collapse"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "notFound": "Page Not Found",
+    "notFoundDesc": "The requested page does not exist."
+  }
+}

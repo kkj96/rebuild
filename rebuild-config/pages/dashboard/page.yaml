@@ -1,0 +1,53 @@
+# Dashboard Page
+id: dashboard
+name: Dashboard
+title: Dashboard
+description: Overview of your service status
+
+components:
+  - id: stats-row
+    type: container
+    props:
+      direction: horizontal
+      gap: 16
+    children:
+      - id: stat-users
+        type: stat
+        props:
+          title: Total Users
+          value: '12,847'
+          icon: Users
+          trend: '+12.5%'
+
+      - id: stat-roles
+        type: stat
+        props:
+          title: Active Roles
+          value: '8'
+          icon: Shield
+          trend: '+2'
+
+  - id: recent-section
+    type: container
+    props:
+      direction: horizontal
+      gap: 24
+    children:
+      - id: recent-users
+        type: card
+        props:
+          title: Recent Users
+          description: Last 5 registered users
+        children:
+          - id: users-table
+            type: table
+            props:
+              resource: users
+              pageSize: 5
+              columns:
+                - field: name
+                  header: Name
+                - field: email
+                  header: Email
+                - field: role
+                  header: Role

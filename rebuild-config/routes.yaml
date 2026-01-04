@@ -1,0 +1,79 @@
+# Route Configuration
+version: '1.0'
+
+# Global settings
+settings:
+  defaultLayout: default
+  authRequired: true
+  notFoundRedirect: /
+
+# Route definitions
+routes:
+  # Auth routes (code-based)
+  - path: /login
+    type: code
+    component: LoginPage
+    auth: false
+    layout: none
+
+  # Builder routes (code-based)
+  - path: /builder/pages
+    type: code
+    component: PageBuilderPage
+    auth: true
+    layout: default
+
+  - path: /builder/resources
+    type: code
+    component: ResourceManagerPage
+    auth: true
+    layout: default
+
+  # YAML-based dynamic routes
+  - path: /
+    type: yaml
+    file: dashboard/page.yaml
+    auth: true
+    layout: default
+
+  - path: /users
+    type: yaml
+    file: users/list.yaml
+    auth: true
+    layout: default
+
+  - path: /users/create
+    type: yaml
+    file: users/create.yaml
+    auth: true
+    layout: default
+
+  - path: /users/edit/:id
+    type: yaml
+    file: users/edit.yaml
+    auth: true
+    layout: default
+
+  - path: /users/show/:id
+    type: yaml
+    file: users/show.yaml
+    auth: true
+    layout: default
+
+  - path: /roles
+    type: yaml
+    file: roles/list.yaml
+    auth: true
+    layout: default
+
+  - path: /roles/create
+    type: yaml
+    file: roles/create.yaml
+    auth: true
+    layout: default
+
+  - path: /roles/edit/:id
+    type: yaml
+    file: roles/edit.yaml
+    auth: true
+    layout: default

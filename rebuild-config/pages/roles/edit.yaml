@@ -1,0 +1,32 @@
+id: roles-edit
+name: RoleEdit
+title: Edit Role
+description: Edit role information
+
+components:
+  - id: roles-form
+    type: form
+    props:
+      resource: roles
+      mode: edit
+      title: Edit Role
+      fields:
+        - name: name
+          label: Role Name
+          type: text
+          required: true
+        - name: description
+          label: Description
+          type: textarea
+        - name: permissions
+          label: Permissions
+          type: multiselect
+          options:
+            - label: Create
+              value: create
+            - label: Read
+              value: read
+            - label: Update
+              value: update
+            - label: Delete
+              value: delete
