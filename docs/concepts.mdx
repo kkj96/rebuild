@@ -1,0 +1,194 @@
+# Core Concepts
+
+Rebuild is a low-code CRUD application builder that uses YAML configuration to define pages, resources, routes, and roles.
+
+## Overview
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                      Rebuild Architecture                    │
+├─────────────────────────────────────────────────────────────┤
+│                                                              │
+│   Routes ──────► Pages ──────► Components                    │
+│      │              │              │                         │
+│      │              │              ▼                         │
+│      │              │         UI Rendering                   │
+│      │              │                                        │
+│      ▼              ▼                                        │
+│   Resources ◄──── Data Binding                               │
+│      │                                                       │
+│      ▼                                                       │
+│   API Server                                                 │
+│                                                              │
+└─────────────────────────────────────────────────────────────┘
+```
+
+## Resources
+
+**Resources** define the data models and API endpoints for your application.
+
+```yaml
+# resources.yaml
+resources:
+  - name: users
+    label: Users
+    endpoint: /users
+    fields:
+      - name: name
+        label: Name
+        type: text
+        required: true
+      - name: email
+        label: Email
+        type: email
+        required: true
+      - name: role
+        label: Role
+        type: select
+        options:
+          - { label: Admin, value: admin }
+          - { label: User, value: user }
+```
+
+### Field Types
+
+| Type | Description |
+|------|-------------|
+| `text` | Single-line text input |
+| `textarea` | Multi-line text input |
+| `email` | Email input with validation |
+| `password` | Password input |
+| `number` | Numeric input |
+| `select` | Dropdown selection |
+| `checkbox` | Boolean toggle |
+| `date` | Date picker |
+| `datetime` | Date and time picker |
+
+---
+
+## Pages
+
+**Pages** define the UI layout using a component tree structure.
+
+```yaml
+# pages/users/list.yaml
+id: users-list
+name: UserList
+title: User Management
+
+components:
+  - id: header
+    type: container
+    props:
+      direction: horizontal
+    children:
+      - id: title
+        type: text
+        props:
+          content: Users
+          level: h1
+      - id: create-btn
+        type: button
+        props:
+          text: Create User
+          action: navigate
+          href: /users/create
+
+  - id: users-table
+    type: table
+    props:
+      resource: users
+      pageSize: 10
+      columns:
+        - field: name
+          header: Name
+        - field: email
+          header: Email
+```
+
+### Component Types
+
+| Type | Description |
+|------|-------------|
+| `container` | Layout container (flex) |
+| `card` | Card with header and content |
+| `table` | Data table with pagination |
+| `form` | Input form |
+| `text` | Text display (p, h1-h3) |
+| `button` | Action button |
+| `stat` | Statistics card |
+| `chart` | Chart visualization |
+| `tabs` | Tabbed content |
+| `divider` | Horizontal separator |
+
+---
+
+## Routes
+
+**Routes** map URL paths to pages.
+
+```yaml
+# routes.yaml
+routes:
+  # YAML-based pages
+  - path: /users
+    type: yaml
+    file: users/list.yaml
+    auth: true
+    layout: default
+
+  # Code-based pages
+  - path: /builder/pages
+    type: code
+    component: PageBuilderPage
+    auth: true
+    layout: default
+```
+
+### Route Properties
+
+| Property | Description |
+|----------|-------------|
+| `path` | URL path (supports params like `:id`) |
+| `type` | `yaml` or `code` |
+| `file` | YAML file path (for `type: yaml`) |
+| `component` | Component name (for `type: code`) |
+| `auth` | Require authentication |
+| `layout` | Layout template (`default`, `none`) |
+
+---
+
+## Roles & Permissions
+
+**Roles** define user permissions for access control.
+
+```yaml
+# Example role structure
+roles:
+  - name: admin
+    permissions:
+      - users:read
+      - users:write
+      - users:delete
+      - roles:read
+      - roles:write
+
+  - name: editor
+    permissions:
+      - users:read
+      - users:write
+
+  - name: viewer
+    permissions:
+      - users:read
+```
+
+### Permission Format
+
+Permissions follow the pattern: `resource:action`
+
+| Action | Description |
+|--------|-------------|
+| `read` | View records |
+| `write` | Create/update records |
+| `delete` | Delete records |
