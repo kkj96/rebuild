@@ -1,0 +1,17 @@
+[project]
+name = "rebuild-server"
+version = "0.1.0"
+description = "Mock API server for Rebuild application"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.128.0",
+    "pydantic>=2.12.5",
+    "uvicorn[standard]>=0.40.0",
+]
+
+[project.scripts]
+rebuild-server = "src.main:run"
+
+[tool.uv]
+package = false
